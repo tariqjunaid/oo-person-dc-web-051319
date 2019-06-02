@@ -30,35 +30,39 @@ class Person
 
 	def get_paid(salary)
 		@bank_account += salary
-		"all about the benjamins"
+		return "all about the benjamins"
 	end
 
 	def take_bath
 		self.hygiene += 4
-		"♪ Rub-a-dub just relaxing in the tub ♫"
+		return "♪ Rub-a-dub just relaxing in the tub ♫"
 	end
 
 	def work_out
 		self.hygiene -= 3
 		self.happiness +=2
-		"♪ another one bites the dust ♫"
+		return "♪ another one bites the dust ♫"
 	end
 
 	def call_friend(friend)
 		self.happiness += 3
 		friend.happiness += 3
-		"Hi #{friend.name}! It's #{self.name}. How are you?"
+		return "Hi #{friend.name}! It's #{self.name}. How are you?"
 	end
 
 	def start_conversation(person, topic)
 		if topic == "politics"
-			[self, person].each { |x| x.happiness -= 2 }
-			"blah blah partisan blah lobbyist"
+			[self, person].each do |x| 
+				x.happiness -= 2
+			end
+			return "blah blah partisan blah lobbyist"
 		elsif topic == "weather"
-			[self, person].each { |y| y.happiness += 1 }
-			"blah blah sun blah rain"
+			[self, person].each do |y| 
+				y.happiness += 1
+			end
+			return "blah blah sun blah rain"
 		else
-			"blah blah blah blah blah"
+			return "blah blah blah blah blah"
 		end
 	end
 end
